@@ -2,43 +2,26 @@ import {useState} from 'react';
 import './App.css';
 import Heading from './Heading';
 import ProductComponent from './ProductComponent'
+import AddComponent from './AddComponent'
+import{
+  BrowserRouter as Router,Switch,Routes,Route,Link}
+  from "react-router-dom";
+
+
 
 function App() {
-  const[count,setCount]=useState(0);
   
   
-  return (
+  
+  return ( 
     <div className="App">
-     <div className="count_button"
-     onClick={
-      ()=>{
-        setCount(count-1);
-      }
-    }
-    >
-       -
-     </div>
-     <div className="count_value">
-       {count}
-
-     </div>
-     <div className="count_button"
-     onClick={
-       ()=>{
-         setCount(count+1);
-       }
-     }
-     >
-     +
-     </div>
-
-   
-
-    
-    
-    <ProductComponent></ProductComponent>
-    
-  </div>
+    <Router>
+      <Routes>
+      <Route path="/multi" element={<AddComponent/>}/>
+      <Route path="/" element={<ProductComponent/>}/>
+    </Routes>
+    </Router>
+</div>
   );
 } 
 
