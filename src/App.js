@@ -1,8 +1,11 @@
 import {useState} from 'react';
 import './App.css';
+import Heading from './Heading';
+import ProductComponent from './ProductComponent'
 
 function App() {
   const[count,setCount]=useState(0);
+  
   
   return (
     <div className="App">
@@ -29,10 +32,16 @@ function App() {
      +
      </div>
 
+   
 
-      </div>
+    
+    
+    <ProductComponent></ProductComponent>
+    
+  </div>
   );
 } 
+
       
 
 export default App;
