@@ -1,0 +1,25 @@
+.App{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  max-width: 500px;
+  margin:auto;
+}
+
+.count_button{
+  height: 100px;
+  background-color: blue;
+  display:grid;
+  place-items: center;
+  font-size: 3rem;
+  color:white;
+  cursor:pointer;
+}
+.count_value{
+  display: grid;
+  place-items: center;
+  font-size:4rem;
+  background-color: magenta;
+}
+.count_value,.count_button{
+  margin: 20px 0;
+}
