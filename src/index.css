@@ -15,12 +15,21 @@ margin: auto; */
     background-color: rgb(233, 240, 226);
     box-shadow: 1px 3px 9px 2px #7e7e7e7e;
     cursor:pointer;
-    transition: 0.1s ease-in-out;
+    transition: 0.5s ease-in-out;
     position:relative;
 }
 .food-card:hover{
-   /* outline: solid 2px rgb(0,194,26);*/
-    transform: scale(1.02) rotateY(45deg);
+    outline: solid 2px rgb(0,194,26);
+    transform:scale(1.03);
+    /*transform: scale(1.02) rotateY(45deg);*/
+}
+.food-card-deleted{
+   transform: scaleX(0);
+   transform-origin: left;
+}
+.food-card-deleted:hover{
+    transform: scale(0);
+
 }
 .food-card-thumbnail{
     width:100%;
@@ -34,6 +43,7 @@ margin: auto; */
     color:green;
     font-size:20px;
     font-weight: bold;
+    text-align:center
 
 }
 .food-card-description{
@@ -55,10 +65,12 @@ margin: auto; */
 }
 .food-card-availability--available{
     background-color: #74ed47;
+    margin:auto;
 }
 .food-card-availability--not-available{
     background-color: #dd0000;
     color:#fff;
+    margin:auto;
 }
 .food-card-close-button{
     width:25px;
