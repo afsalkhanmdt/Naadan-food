@@ -1,88 +1,296 @@
 *{
-    margin:0;
+    margin: 0;
     box-sizing: border-box;
-   padding:0;
+    padding: 0;
 }
-.food-card-list{
-display: grid;
-grid-template-columns: repeat(4,1fr);
-gap:10px;
-padding:10px;
-/* max-width: 1000px;
-margin: auto; */
-}
-.food-card{
-    background-color: rgb(233, 240, 226);
-    box-shadow: 1px 3px 9px 2px #7e7e7e7e;
-    cursor:pointer;
-    transition: 0.5s ease-in-out;
-    position:relative;
-}
-.food-card:hover{
-    outline: solid 2px rgb(0,194,26);
-    transform:scale(1.03);
-    /*transform: scale(1.02) rotateY(45deg);*/
-}
-.food-card-deleted{
-   transform: scaleX(0);
-   transform-origin: left;
-}
-.food-card-deleted:hover{
-    transform: scale(0);
 
+.container{
+    max-width: 900px;
+    margin: auto;
+    padding: 0 10px;
 }
+
+.input-section{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    position: relative;;
+}
+
+.food-card-list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    padding: 10px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.food-card{
+    background-color: #186d691c;
+    box-shadow: 1px 3px 9px 2px #52525242;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.food-card:hover{
+    transform: scale(1.03);
+}
+
+.food-card--deleted-available{
+    transform: translateY(-100%);    
+}
+
+.food-card--deleted-available:hover{
+    transform: translateY(-100%);
+}
+
+.food-card--deleted-not-available{
+    transform: translateY(100%);    
+}
+
+.food-card--deleted-not-available:hover{
+    transform: translateY(100%);
+}
+
 .food-card-thumbnail{
-    width:100%;
+    width: 100%;
 }
+
 .food-card-title{
     font-size: 1.4rem;
     font-weight: 600;
-    text-align:center
+    text-align: center;
 }
-.food-card-price{
-    color:green;
-    font-size:20px;
-    font-weight: bold;
-    text-align:center
 
+.food-card-price{
+    color: green;
+    font-weight: 600;
 }
+
 .food-card-description{
     overflow: hidden;
-    text-overflow: allipsis;
+    text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    color:black;
+    color: #444;
 }
-.food-card-detail-section{
-    padding:10px;
+
+.food-card-details-section{
+    padding: 10px;
 }
+
 .food-card-availability{
     width: fit-content;
-    padding:5px;
-    border-radius:2px;
-    margin:5px 0;
+    padding: 5px;
+    border-radius: 2px;
+    margin: 5px 0;
 }
 .food-card-availability--available{
     background-color: #74ed47;
-    margin:auto;
 }
+
 .food-card-availability--not-available{
     background-color: #dd0000;
-    color:#fff;
-    margin:auto;
+    color: #fff;
 }
-.food-card-close-button{
-    width:25px;
+
+.food-card-close-button, .food-card-edit-button{
+    width: 25px;
     height: 25px;
-   position: absolute; 
-   right: 5px;
-   top:5px;
-   background-image: url(./assets/icons/times-solid.svg);
-   background-repeat: no-repeat;
-   background-position:center;
-   background-size:50%;
-   background-color:#fffa;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-image: url(./assets/icons/times-solid.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    background-color: #fffa;
+    cursor: pointer;
 }
 
+.food-card-edit-button{
+    right: 35px;
+    background-image: url(./assets/icons/edit-solid.svg);
+    background-size: 70%;
+}
 
+.over-view-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000a;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+}
+
+.edit-food-card-container{
+    background-color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.input-fields{
+    display: grid;
+    grid-template-columns: 120px auto;
+    gap: 20px;
+    padding: 5px 0;
+}
+
+textarea{
+    resize: none;
+    height: 80px;
+    padding: 5px;
+}
+
+input{
+    padding: 3px 5px;
+}
+
+.submit-section{
+    display: grid;
+    justify-content: end;
+    padding-top: 10px;
+}
+
+button{
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+h1{
+    text-align: center;
+    margin: 60px 0;
+}
+
+.todo-button{
+    padding: 15px 60px;
+    font-weight: bold;
+}
+
+.todo-item{
+    background-color: #ECECEC;
+    padding: 15px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-circle{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: solid 1px #AEAEAE;
+    background-color: #fff;
+}
+
+.status-circle--active{
+    background-color: green;
+    border: solid 4px #fff;
+}
+
+.todo-close-button,
+.todo-edit-button,
+.todo-edit-cancel-button,
+.todo-edit-save-button{
+    background-image: url(./assets/icons/close-button.svg);
+    width: 25px;
+    height: 25px;
+    background-size: 120%;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.todo-edit-button{
+    background-image: url(./assets/icons/edit-solid.svg);
+    background-size: 100%;
+}
+
+.todo-edit-text-field{
+    width: 100%;
+    padding: 8px 30px 8px 10px;
+    border: none;
+}
+
+.todo-edit-text-container{
+    position: relative;
+}
+
+.todo-edit-cancel-button,.todo-error-text{
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.todo-edit-cancel-button{    
+    width: 20px;
+    height: 20px;
+    background-image: url(./assets/icons/text-close-button.svg);
+}
+
+.todo-error-text{
+    width: 70%;
+    text-align: right;
+    right: 30px;
+    color: red;
+}
+
+.todo-edit-save-button{
+    background-image: url(./assets/icons/tick-mark.svg);
+    background-size: 100%;
+}
+
+.duplicate-error{
+    position: absolute;
+    right: 160px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f00;
+}
+
+.logout-section{
+    display: grid;
+    justify-content: right;
+    margin: 15px 0;
+}
+
+.logout-section button{
+    background-color: gray;
+}
+
+.error-text{
+    color: red;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.link-section{
+    margin: 10px 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .todo-button{
+        padding: 15px;
+    }
+
+    .duplicate-error{
+        right: 65px;
+    }
+
+    .todo-item{
+        gap: 5px;
+    }
+}

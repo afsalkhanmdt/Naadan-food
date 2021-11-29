@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+}
+.container{
+    text-align: center;
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+    margin: auto;
+
+}
+h1{
+    color: red;
+}
+.data{
+    color: green;
+    font-size: 100px;
+    text-shadow: 3px 2px blue;
+}

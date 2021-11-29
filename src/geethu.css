@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+.container{
+    display:grid;
+}
+.number-section{
+    margin:auto;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-content: stretch;
+    align-items: stretch;
+    justify-items: stretch;
+}
+.result-section{
+    padding:10px;
+    text-align:center;
+}
+button{
+    background-color: #15266f;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 5px 4px 9px 7px rgb(20 30 10);
+    margin:auto;
+}
+.number-container{
+    gap:10px;
+    padding:10px;
+    /* justify-content: center; */
+}
+/* h1{
+    text-align:center;
+} */

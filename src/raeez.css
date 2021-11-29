@@ -1,0 +1,15 @@
+*{
+    margin:0;
+}
+.container{
+    display: grid;
+    justify-content: center;
+    gap:10px;
+}
+h1{
+    text-align: center;
+}
+.input-area{
+    margin:auto;
+  
+}
